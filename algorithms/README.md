@@ -1,5 +1,4 @@
-Algoritms and exercise
-==============================
+# Algorithms and exercise
 
 
 
