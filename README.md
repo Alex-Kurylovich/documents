@@ -39,6 +39,9 @@ Dvdrental databases workshop
 
 ### Spring
 
+### JPA
+
+
 
 
 
