@@ -35,6 +35,9 @@ DVD rental Database simple study: <br/>
 Dvdrental databases workshop
 **(https://nuitrcs.github.io/databases_workshop/sql/part1.html)**
 
+### Python
+
+
 
 
 
