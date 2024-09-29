@@ -140,12 +140,9 @@ ui: http://localhost:4200/<br/>
 ### MAC
 
 vm_stat | perl -ne '/page size of (\d+)/ and $size=$1; /Pages\s+([^:]+)[^\d]+(\d+)/ and printf("%-16s % 16.2f Mi\n", "$1:", $2 * $size / 1048576);'
-
 /usr/libexec/java_home -V
-
 Azure<br/>
 https://portal.azure.com/?quickstart=true#blade/Microsoft_Azure_Resources/QuickstartCenterBlade<br/>
-
 https://clickup.com/teams/project-management?utm_source=natural-intelligence&utm_medium=cpc&utm_campaign=nat_cpc_am_nnc_acq_trial_all-devices_cpc_lp_x_all-departments_x&utm_content=BjJSWzl0uI<br/>
 Alex Kurylovich<br/> 
 alex.v.kurylovich@gmail.com, MkavCup1122!
