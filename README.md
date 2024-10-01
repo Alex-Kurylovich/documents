@@ -33,11 +33,19 @@ C:\Program Files\PostgresSQL\16\pgAdmin 4
 **Stack Builder Installation Directory:**<br/> 
 C:\Program Files\PostgresSQL\16<br/>
 **Installation Log:** <br/>C:\Users\alexkurylovich\AppData\Local\Temp\install-postgresql.log<br/>
-PostgresSQL Sample Database:
+**Run psql command:**<br/>
+Env vars: Files\PostgreSQL\16\bin;C:\Program Files\PostgreSQL\16\lib<br/>
+psql -U postgres<br/>
+psql -U postgres -h localhost dvdrental<br/>
+psql -d dvdrental -U postgres -W<br/>
+**PostgresSQL Sample Database:**<br/>
 **https://www.postgresqltutorial.com/postgresql-getting-started/postgresql-sample-database/**<br/>
 DVD rental Database simple study: <br/>
 **https://www.kaggle.com/code/fetchii/dvd-rental-database-simple-study** <br/>
-Dvdrental databases workshop
+Dvdrental databases workshop:<br/>
+**https://nuitrcs.github.io/databases_workshop/sql/part1.html**<br/>
+Simple study:<br/>
+**https://www.kaggle.com/code/fetchii/dvd-rental-database-simple-study**<br/>
 **https://nuitrcs.github.io/databases_workshop/sql/part1.html**
 
 ### Java
@@ -70,6 +78,8 @@ quit()
 
 ### Spring
 
+Spring Microservices in Action<br/>
+https://github.com/wuyichen24/spring-microservices-in-action.git<br/>
 What Is a Spring Bean?<br/>
 https://www.baeldung.com/spring-bean<br/>
 Spring @Component Annotation<br/>
