@@ -1,0 +1,77 @@
+
+--
+-- Name: film_unknown; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.film_unknown (
+    film_id integer DEFAULT nextval('public.film_film_id_seq'::regclass) NOT NULL,
+    title character varying(255) NOT NULL,
+    description text,
+    release_year public.year,
+    language_id smallint,
+    actor_id smallint,
+    film_category_id smallint,
+    length smallint,
+    special_features text[],
+    fulltext tsvector
+);
+
+
+ALTER TABLE public.film_unknown OWNER TO postgres;
+
+COPY public.film_unknown (film_id, title, description, release_year, language_id, length, special_features, fulltext) FROM stdin;
+\.
+COPY public.film_unknown (film_id, title, description, release_year, language_id, actor_id, film_category_id, length, special_features, fulltext) FROM '$$PATH$$/3091.dat';
+
+--
+-- Name: film_unknown film_pkey_unknown; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.film_unknown
+    ADD CONSTRAINT film_pkey_unknown PRIMARY KEY (film_id);
+	
+--
+-- Name: film_unknown film_language_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.film_unknown
+    ADD CONSTRAINT film_language_id_fkey FOREIGN KEY (language_id) REFERENCES public.language(language_id) ON UPDATE CASCADE ON DELETE RESTRICT;
+
+--
+-- Name: film_unknown actor_id; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.film_unknown
+    ADD CONSTRAINT actor_id_fkey FOREIGN KEY (actor_id) REFERENCES public.actor(actor_id) ON UPDATE CASCADE ON DELETE RESTRICT;
+
+--
+-- Name: film_category_id; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.film_unknown
+    ADD CONSTRAINT film_category_id_fkey FOREIGN KEY (film_category_id) REFERENCES public.category(category_id) ON UPDATE CASCADE ON DELETE RESTRICT;
+
+COPY film_unknown(film_id, title, description, release_year, language_id, actor_id, film_category_id, length, special_features, fulltext)
+FROM 'C:\temp\film_unknown.csv'
+DELIMITER ','
+CSV HEADER;
+
+SELECT * 
+FROM 
+  film_unknown
+INNER JOIN category 
+  ON film_unknown.film_category_id = category.category_id;
+  
+SELECT * 
+FROM 
+  film_unknown
+INNER JOIN actor
+  ON film_unknown.actor_id = actor.actor_id;
+
+SELECT * 
+FROM 
+  film_unknown
+INNER JOIN actor
+  ON film_unknown.language_id = language.language_id;
+
+
