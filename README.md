@@ -38,15 +38,41 @@ Env vars: Files\PostgreSQL\16\bin;C:\Program Files\PostgreSQL\16\lib<br/>
 psql -U postgres<br/>
 psql -U postgres -h localhost dvdrental<br/>
 psql -d dvdrental -U postgres -W<br/>
+\c <db-name><br/>
 **PostgresSQL Sample Database:**<br/>
 **https://www.postgresqltutorial.com/postgresql-getting-started/postgresql-sample-database/**<br/>
 DVD rental Database simple study: <br/>
 **https://www.kaggle.com/code/fetchii/dvd-rental-database-simple-study** <br/>
 Dvdrental databases workshop:<br/>
 **https://nuitrcs.github.io/databases_workshop/sql/part1.html**<br/>
-Simple study:<br/>
-**https://www.kaggle.com/code/fetchii/dvd-rental-database-simple-study**<br/>
-**https://nuitrcs.github.io/databases_workshop/sql/part1.html**
+COPY film_unknown(film_id, title, description, release_year, language_id, actor_id, film_category_id, length, special_features, fulltext)
+FROM 'C:\temp\film_unknown.csv'
+DELIMITER ','
+CSV HEADER;
+
+SELECT * 
+FROM 
+  film_unknown
+INNER JOIN category 
+  ON film_unknown.film_category_id = category.category_id;
+
+Export:<br/>
+film_id,title,description,release_year,language_id,actor_id,film_category_id,length,special_features,fulltext
+133,Chamber Italian,A Fateful Reflection of a Moose And a Husband who must Overcome a Monkey in Nigeria,2006,,,,117,{Trailers},chamber':1 'fate':4 'husband':11 'italian':2 'monkey':16 'moos':8 'must':13 'nigeria':18 'overcom':14 'reflect':5
+384,Grosse Wonderful,A Epic Drama of a Cat And a Explorer who must Redeem a Moose in Australia,2006,,,1,49,"{""Behind the Scenes""}",'australia':18 'cat':8 'drama':5 'epic':4 'explor':11 'gross':1 'moos':16 'must':13 'redeem':14 'wonder':2
+8,Airport Pollock,A Epic Tale of a Moose And a Girl who must Confront a Monkey in Ancient India,2006,,1,,54,{Trailers},'airport':1 'ancient':18 'confront':14 'epic':4 'girl':11 'india':19 'monkey':16 'moos':8 'must':13 'pollock':2 'tale':5
+98,Bright Encounters,A Fateful Yarn of a Lumberjack And a Feminist who must Conquer a Student in A Jet Boat,2006,,2,1,73,{Trailers},'boat':20 'bright':1 'conquer':14 'encount':2 'fate':4 'feminist':11 'jet':19 'lumberjack':8 'must':13 'student':16 'yarn':5
+1,Academy Dinosaur,A Epic Drama of a Feminist And a Mad Scientist who must Battle a Teacher in The Canadian Rockies,2006,2,,,86,"{""Deleted Scenes"",""Behind the Scenes""}",'academi':1 'battl':15 'canadian':20 'dinosaur':2 'drama':5 'epic':4 'feminist':8 'mad':11 'must':14 'rocki':21 'scientist':12 'teacher':17
+2,Ace Goldfinger,A Astounding Epistle of a Database Administrator And a Explorer who must Find a Car in Ancient China,2006,3,,2,48,"{Trailers,""Deleted Scenes""}",'ace':1 'administr':9 'ancient':19 'astound':4 'car':17 'china':20 'databas':8 'epistl':5 'explor':12 'find':15 'goldfing':2 'must':14
+3,Adaptation Holes,A Astounding Reflection of a Lumberjack And a Car who must Sink a Lumberjack in A Baloon Factory,2006,4,3,,50,"{Trailers,""Deleted Scenes""}","'adapt':1 'astound':4 'baloon':19 'car':11 'factori':20 'hole':2 'lumberjack':8,16 'must':13 'reflect':5 'sink':14"
+4,Affair Prejudice,A Fanciful Documentary of a Frisbee And a Lumberjack who must Chase a Monkey in A Shark Tank,2006,5,4,3,117,"{Commentaries,""Behind the Scenes""}",'affair':1 'chase':14 'documentari':5 'fanci':4 'frisbe':8 'lumberjack':11 'monkey':16 'must':13 'prejudic':2 'shark':19 'tank':20
+5,African Egg,A Fast-Paced Documentary of a Pastry Chef And a Dentist who must Pursue a Forensic Psychologist in The Gulf of Mexico,2006,1,1,1,130,"{""Deleted Scenes""}",'african':1 'chef':11 'dentist':14 'documentari':7 'egg':2 'fast':5 'fast-pac':4 'forens':19 'gulf':23 'mexico':25 'must':16 'pace':6 'pastri':10 'psychologist':20 'pursu':17
+6,Agent Truman,A Intrepid Panorama of a Robot And a Boy who must Escape a Sumo Wrestler in Ancient China,2006,1,1,1,169,"{""Deleted Scenes""}",'agent':1 'ancient':19 'boy':11 'china':20 'escap':14 'intrepid':4 'must':13 'panorama':5 'robot':8 'sumo':16 'truman':2 'wrestler':17
+7,Airplane Sierra,A Touching Saga of a Hunter And a Butler who must Discover a Butler in A Jet Boat,2006,1,1,1,62,"{Trailers,""Deleted Scenes""}","'airplan':1 'boat':20 'butler':11,16 'discov':14 'hunter':8 'jet':19 'must':13 'saga':5 'sierra':2 'touch':4"
+9,Alabama Devil,A Thoughtful Panorama of a Database Administrator And a Mad Scientist who must Outgun a Mad Scientist in A Jet Boat,2006,1,1,1,114,"{Trailers,""Deleted Scenes""}","'administr':9 'alabama':1 'boat':23 'databas':8 'devil':2 'jet':22 'mad':12,18 'must':15 'outgun':16 'panorama':5 'scientist':13,19 'thought':4"
+10,Aladdin Calendar,A Action-Packed Tale of a Man And a Lumberjack who must Reach a Feminist in Ancient China,2006,1,1,1,63,"{Trailers,""Deleted Scenes""}",'action':5 'action-pack':4 'aladdin':1 'ancient':20 'calendar':2 'china':21 'feminist':18 'lumberjack':13 'man':10 'must':15 'pack':6 'reach':16 'tale':7
+11,Alamo Videotape,A Boring Epistle of a Butler And a Cat who must Fight a Pastry Chef in A MySQL Convention,2006,1,2,2,126,"{Commentaries,""Behind the Scenes""}",'alamo':1 'bore':4 'butler':8 'cat':11 'chef':17 'convent':21 'epistl':5 'fight':14 'must':13 'mysql':20 'pastri':16 'videotap':2
+
 
 ### Java
 
