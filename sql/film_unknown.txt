@@ -73,16 +73,16 @@ FROM
   film_unknown
 INNER JOIN language
   ON film_unknown.language_id = language.language_id;
-
+  
 SELECT *
-FROM
+FROM 
 	film_unknown
 INNER JOIN language
   ON film_unknown.language_id = language.language_id
 INNER JOIN actor
-  ON film_unknown.actor_id = actor.actor_id;
-
-  SELECT *
+  ON film_unknown.actor_id = actor.actor_id; 
+  
+SELECT *
   FROM
   	film_unknown
   INNER JOIN language
@@ -91,8 +91,4 @@ INNER JOIN actor
     ON film_unknown.film_category_id = category.category_id
   INNER JOIN actor
     ON film_unknown.actor_id = actor.actor_id;
-
-
-
-
-
+  
